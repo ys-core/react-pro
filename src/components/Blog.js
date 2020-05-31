@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import axios from 'axios'
 import propTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import '../css/blog.css'
 import THUMBUP from '../assets/Icon/star_pink.svg'
@@ -9,17 +10,25 @@ import AUTHOR from '../assets/Icon/author.svg'
 import DATE from '../assets/Icon/date_black.svg'
 import VIEW from '../assets/Icon/view.svg'
 
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+
+import {  Button, MessageBox, Message } from 'element-react'
+
 import FootBar from './footer/Footer'
 import Header from './header/Header'
 import Loading from './Loading'
 
-class Blog extends Component{
+
+class BlogPage extends Component{
     constructor(props){
         super(props)
         this.state={
+            signInUser: this.props.signInUser,
             article: {},
             comments: [],
-            isLoading: true
+            isLoading: true,
+            comment: ''
         }
     }
     componentDidMount(){
@@ -69,12 +78,6 @@ class Blog extends Component{
         window.sessionStorage.setItem('blog_id',"")
         window.sessionStorage.setItem('views',"")
     }
-    componentWillUpdate(){
-
-    }
-    componentDidUpdate(){
-
-    }
     updateStar(){
         let id = this.state.article._id
           let stars = this.state.article.starsNum
@@ -88,7 +91,56 @@ class Blog extends Component{
           }).catch(err => {
           })
     }
-
+    submitComment(){
+        const from = this.props.signInUser   // this.state.signInUser
+        const comment = this.state.comment
+        const { _id } = this.state.article
+        if(from){
+                if(comment){
+                    axios.post('/api/add_article_comment',{ from,  _id, time: new Date(), comment }).then(res => {
+                            if(res.data.status === 'true'){
+                                this.requestData(_id)
+                                this.setState({
+                                    comment: ''
+                                })
+                            }
+                    }).catch(err => {
+                        
+                    })
+                }
+            }else{
+                Message.success({
+                    message: '输入内容为空'
+                });
+            }
+    }
+    submitCommentAnonymously(){
+        const comment = this.state.comment
+        const { _id } = this.state.article
+        MessageBox.prompt('请输入邮箱', '提示', {
+            inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+            inputErrorMessage: '邮箱格式不正确'
+        }).then(({ value }) => {
+            const from =  value
+            if(from){
+                if(comment){
+                    axios.post('/api/add_article_comment',{ from,  _id, time: new Date(), comment  }).then(res => {
+                            if(res.data.status === 'true'){
+                                this.requestData(_id)
+                                this.setState({ comment: '' })
+                            }
+                    }).catch(err => { })
+                }
+            }
+        }).catch(() => {
+            
+        });
+    }
+    resetInputBox(){
+            this.setState({
+                comment: ''
+            })
+    }
     render(){
 
         let { _id, articleTitle, articleType, comments, content, createDate, author,starsNum, views } = this.state.article
@@ -112,6 +164,15 @@ class Blog extends Component{
                                     </ul>
                                 <div className="content" id="content"   dangerouslySetInnerHTML={{__html: `${content}` }}  /> 
                                 <div className="comment-area">
+                                    <div className="blog-input-box">
+                                            <ReactQuill theme="snow" value={ this.state.comment } onChange={ (val) =>{ this.setState({ comment: val })} }/>
+                                            <span className="btn-wrapper">
+                                                        <Button type="success" onClick={ _id => this.submitComment()}>提交留言</Button>
+                                                        <Button type="warning" onClick={ _id => this.submitCommentAnonymously()}>匿名留言</Button>
+                                                        <Button type="danger" onClick={ _id => this.resetInputBox()}>重置留言</Button>
+                                            </span>
+                                            {this.props.signInUser}
+                                    </div>
                                     { 
                                         this.state.comments.map((item,index) => {
                                             return <CommentItem comment={ item } index={ index } key={ item._id } />
@@ -162,5 +223,12 @@ CommentItem.propTypes = {
     comment: propTypes.object.isRequired,
     index: propTypes.number.isRequired
 }
+
+const mapStateToProps = (state) => {
+    return{
+        signInUser: state.signIn.signInUser
+    }
+}
+const Blog = connect(mapStateToProps)(BlogPage)
 
 export default Blog
