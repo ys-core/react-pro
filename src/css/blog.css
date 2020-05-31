@@ -1,0 +1,199 @@
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+    /* background-color: #eceef0; */
+}
+
+@media screen and (min-width: 800px){
+@keyframes scaleItself {
+    0%{ transform: scale(1.3);    }
+    70%{  transform: scale(0.8); }
+    100%{ transform: scale(1.2);  }
+}
+@-webkit-keyframes scaleItself {
+    0%{ -webkit-transform: scale(1.3);    }
+    70%{  -webkit-transform: scale(0.8); }
+    100%{ -webkit-transform: scale(1.2);  }
+}
+.blog{
+    width: 800px;
+    min-height: 100vh;
+    margin: 20px auto 80px;
+    padding: 50px 10px 20px 20px;
+    background-color: #fff;
+}
+.blog h2{
+    margin-bottom: 40px;
+}
+.blog .info{
+    /* background-color: yellow; */
+    margin-bottom: 40px;
+}
+.blog .info li{
+    list-style-type: none;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.blog .info li img:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.blog .info li .star{
+    animation: scaleItself  linear 0.8s 0s alternate forwards;
+    -webkit-animation: scaleItself  linear 2s 0.8s infinite forwards;
+}
+.blog .content{
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    margin-bottom:100px;
+}
+.blog .content p{
+    text-indent: 2rem !important;
+}
+.blog .content pre{
+    background-color: #000 !important;
+    color: #fff;
+    padding: 8px 0  10px 20px
+}
+.blog .comment-area{
+    margin-bottom: 60px;
+}
+.blog .comment-area::before{
+    content: "下面是评论区域哦~";
+    font-size: 2rem;
+    color: purple;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 30px;
+}
+.blog .comment-area::after{
+    content: "谢谢你的光临~";
+    font-size: 2rem;
+    color: purple;
+    font-weight: bold;
+    display: block;
+    padding-top: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.blog .comment-area p{
+    padding-top: 5px;
+}
+.blog .comment-area ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 10px 0 0;
+}
+.blog-comment-item{
+    margin: 2px 0 5px 0;
+    padding: 5px 0 20px 8px;
+    border-bottom: 2px solid rgb(245, 228, 228);
+}
+.blog-comment-item:hover{
+    background-color: rgb(255, 240, 240);
+}
+
+
+}
+
+
+
+@media screen and (max-width: 800px){
+@keyframes scaleItself {
+    0%{ transform: scale(1.3);    }
+    70%{  transform: scale(0.8); }
+    100%{ transform: scale(1.2);  }
+}
+@-webkit-keyframes scaleItself {
+    0%{ -webkit-transform: scale(1.3);    }
+    70%{  -webkit-transform: scale(0.8); }
+    100%{ -webkit-transform: scale(1.2);  }
+}
+.blog{
+    width: 98vh;
+    min-height: 100vh;
+    margin: 20px auto 80px;
+    padding: 50px 0 0 20px;
+    background-color: #fff;
+}
+.blog h2{
+    margin-bottom: 40px;
+}
+.blog .info{
+    /* background-color: yellow; */
+    margin-bottom: 40px;
+}
+.blog .info li{
+    list-style-type: none;
+    font-size: 0.8rem;
+    line-height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.blog .info li .star{
+    animation: scaleItself  linear 0.8s 0s alternate forwards;
+    -webkit-animation: scaleItself  linear 2s 0.8s infinite forwards;
+}
+.blog .info li img:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.blog .content{
+    font-size: 1rem !important;
+    overflow-x: auto;
+    line-height: 2rem;
+}
+.blog .content p{
+    text-indent: 1rem !important;
+}
+.blog .content pre{
+    background-color: #000 !important;
+    color: #fff;
+    padding: 4px 0  10px 8px
+}
+.blog .comment-area{
+    margin-bottom: 60px;
+}
+.blog .comment-area::before{
+    content: "下面是评论区域哦~";
+    font-size: 2rem;
+    color: purple;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 30px;
+}
+.blog .comment-area::after{
+    content: "谢谢你的光临~";
+    font-size: 2rem;
+    color: purple;
+    font-weight: bold;
+    display: block;
+    padding-top: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.blog .comment-area p{
+    padding-top: 5px;
+}
+.blog .comment-area ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 10px 0 0;
+}
+.blog-comment-item{
+    margin: 2px 0 5px 0;
+    padding: 5px 0 20px 8px;
+    border-bottom: 2px solid rgb(245, 228, 228);
+}
+.blog-comment-item:hover{
+    background-color: rgb(255, 240, 240);
+}   
+    
+}

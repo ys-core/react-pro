@@ -1,0 +1,134 @@
+
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+@keyframes scaleItself {
+    0%{ transform: scale(1.3);    }
+    70%{  transform: scale(0.8); }
+    100%{ transform: scale(1.2);  }
+}
+@-webkit-keyframes scaleItself {
+    0%{ -webkit-transform: scale(1.3);    }
+    70%{  -webkit-transform: scale(0.8); }
+    100%{ -webkit-transform: scale(1.2);  }
+}
+@media screen and (min-width:1000px){
+.input-box{
+    width: 1000px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #fff;
+    margin: 20px auto 10px;
+    position: sticky;
+    top: 60px;
+    /* height: 100px; */
+    /* border: 1px solid gray; */
+    z-index: 99;
+}
+.btn-wrapper{
+    display: block;
+    margin-top: 1rem;
+}
+.comment-warpper{
+    width: 1000px;
+    min-height: 100vh;
+    margin: 20px auto 50px;
+}
+.comment-item{
+    padding: 25px 10px 25px 10px;
+    background-color: #fff;
+    margin-bottom: 25px;
+}
+.comment{
+    margin-bottom: 40px;
+}
+.comment  p{
+    /* line-height: 2rem !important; */
+}
+.comment-item ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 10px;
+    font-weight: bold;
+}
+.comment-item ul li .star{
+    animation: scaleItself  linear 0.8s 0s alternate forwards;
+    -webkit-animation: scaleItself  linear 2s 0.8s infinite forwards;
+}
+
+}
+
+
+
+
+@media screen and (min-width:760px)and (max-width:1000px){
+.comment-warpper{
+    width: 94vw;
+    min-height: 100vh;
+    margin: 60px auto 50px;
+}
+.comment-item{
+    padding: 25px 10px 25px 10px;
+    background-color: #fff;
+    margin-bottom: 25px;
+}
+.comment{
+    margin-bottom: 40px;
+}
+.comment  p{
+    /* line-height: 2rem !important; */
+}
+.comment-item ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 10px;
+    font-weight: bold;
+}
+.comment-item ul li .star{
+    animation: scaleItself  linear 0.8s 0s alternate forwards;
+    -webkit-animation: scaleItself  linear 2s 0.8s infinite forwards;
+}
+
+
+}
+
+
+
+
+@media screen and (max-width:760px){
+.comment-warpper{
+    width: 96vw;
+    min-height: 100vh;
+    margin: 60px auto 50px;
+}
+.comment-item{
+    padding: 25px 10px 25px 10px;
+    background-color: #fff;
+    margin-bottom: 25px;
+}
+.comment{
+    margin-bottom: 40px;
+}
+.comment  p{
+    /* line-height: 2rem !important; */
+}
+.comment-item ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 10px;
+    font-weight: bold;
+}
+.comment-item ul li .star{
+    animation: scaleItself  linear 0.8s 0s alternate forwards;
+    -webkit-animation: scaleItself  linear 2s 0.8s infinite forwards;
+}
+
+
+}
+
+
+
+
+

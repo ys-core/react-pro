@@ -1,0 +1,24 @@
+
+.foot-nav{
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+    /* background-color: rgba(30, 191, 240,0.8); */
+    /* line-height: 60px; */
+    /* min-height: 5vh; */
+    position: sticky;
+    top: 0;
+}
+.foot-nav-item{
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+.foot-nav-item .web-tag{
+    display: block;
+    margin: auto;
+    /* font-family: 'Microsoft Yahei'; */
+    font-size: 1.2rem;
+    color:#000;
+    font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+}

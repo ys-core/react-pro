@@ -1,0 +1,48 @@
+@media screen and (min-width: 800px){
+.foot-nav{
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.foot-nav-item{
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+.foot-nav-item .web-tag{
+    display: block;
+    margin:  0 auto 1rem;
+    /* font-family: 'Microsoft Yahei'; */
+    font-size: 1.2rem;
+    color:#000;
+    font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+}
+.foot-nav-item .web-tag:last-child{
+    margin-bottom:  4rem;
+}
+
+
+}
+@media screen and (max-width: 800px){
+    .foot-nav{
+        height: 40px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .foot-nav-item{
+        max-width: 95vh;
+        margin: auto;
+        text-align: center;
+    }
+    .foot-nav-item .web-tag{
+        display: block;
+        margin: auto;
+        padding-bottom: 20px;
+        /* font-family: 'Microsoft Yahei'; */
+        font-size: 0.8rem;
+        color:#000;
+        font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+    }
+    
+    
+    }

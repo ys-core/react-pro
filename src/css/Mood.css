@@ -1,0 +1,107 @@
+
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+@keyframes scaleItself {
+    0%{ transform: scale(1.3);    }
+    70%{  transform: scale(0.8); }
+    100%{ transform: scale(1.2);  }
+}
+@-webkit-keyframes scaleItself {
+    0%{ -webkit-transform: scale(1.3);    }
+    70%{  -webkit-transform: scale(0.8); }
+    100%{ -webkit-transform: scale(1.2);  }
+}
+@media screen and (min-width:1000px){
+.mood-warpper{
+    width: 1000px;
+    min-height: 100vh;
+    margin: 60px auto 50px;
+}
+.mood-item{
+    padding: 25px 10px 25px 10px;
+    background-color: #fff;
+    margin-bottom: 25px;
+}
+.mood{
+    margin-bottom: 30px;
+}
+.mood-item ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 10px;
+    font-weight: bold;
+}
+.mood-item ul li .star{
+    animation: scaleItself  linear 0.8s 0s alternate forwards;
+    -webkit-animation: scaleItself  linear 2s 0.8s infinite forwards;
+}
+
+}
+
+
+
+
+@media screen and (min-width:760px)and (max-width:1000px){
+.mood-warpper{
+    width: 95vw;
+    min-height: 100vh;
+    margin: 60px auto 50px;
+}
+.mood-item{
+    padding: 25px 10px 25px 10px;
+    background-color: #fff;
+    margin-bottom: 25px;
+}
+.mood{
+    margin-bottom: 30px;
+}
+.mood-item ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 10px;
+    font-weight: bold;
+}
+.mood-item ul li .star{
+    animation: scaleItself  linear 0.8s 0s alternate forwards;
+    -webkit-animation: scaleItself  linear 2s 0.8s infinite forwards;
+}
+
+}
+
+
+
+
+@media screen and (max-width:760px){
+.mood-warpper{
+    width: 96vw;
+    min-height: 100vh;
+    margin: 60px auto 50px;
+}
+.mood-item{
+    padding: 25px 10px 25px 10px;
+    background-color: #fff;
+    margin-bottom: 25px;
+}
+.mood{
+    margin-bottom: 30px;
+}
+.mood-item ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 10px;
+    font-weight: bold;
+}
+.mood-item ul li .star{
+    animation: scaleItself  linear 0.8s 0s alternate forwards;
+    -webkit-animation: scaleItself  linear 2s 0.8s infinite forwards;
+}
+
+}
+
+
+
+
+
